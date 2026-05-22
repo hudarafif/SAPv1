@@ -84,10 +84,10 @@ export default function RekrutmenPage() {
   return (
     <div className="space-y-6 animate-fade-in">
       {/* Tab Navigation */}
-      <div className="flex border-b border-zinc-200 dark:border-zinc-800 gap-2">
+      <div className="flex border-b border-zinc-200 dark:border-zinc-800 gap-2 overflow-x-auto whitespace-nowrap scrollbar-thin">
         <button
           onClick={() => setActiveTab('applicants')}
-          className={`py-3 px-4 text-sm font-semibold border-b-2 flex items-center gap-2 cursor-pointer transition-all ${
+          className={`py-3 px-4 text-sm font-semibold border-b-2 flex items-center gap-2 shrink-0 cursor-pointer transition-all ${
             activeTab === 'applicants'
               ? 'border-brand-500 text-brand-600 dark:text-brand-400'
               : 'border-transparent text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300'
@@ -98,7 +98,7 @@ export default function RekrutmenPage() {
         </button>
         <button
           onClick={() => setActiveTab('positions')}
-          className={`py-3 px-4 text-sm font-semibold border-b-2 flex items-center gap-2 cursor-pointer transition-all ${
+          className={`py-3 px-4 text-sm font-semibold border-b-2 flex items-center gap-2 shrink-0 cursor-pointer transition-all ${
             activeTab === 'positions'
               ? 'border-brand-500 text-brand-600 dark:text-brand-400'
               : 'border-transparent text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300'
@@ -384,7 +384,7 @@ function ApplicantDetailModal({ onClose, applicant, isLoading }: AppModalProps) 
         ) : (
           <div className="flex-1 overflow-y-auto p-6 space-y-6">
             {/* Applicant Bio */}
-            <div className="grid grid-cols-2 gap-4 border-b border-zinc-200/40 dark:border-zinc-800/40 pb-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-b border-zinc-200/40 dark:border-zinc-800/40 pb-5">
               <div>
                 <span className="text-[10px] uppercase font-bold text-zinc-400 dark:text-zinc-500">Nama Pelamar</span>
                 <p className="text-sm font-semibold text-zinc-800 dark:text-zinc-100 mt-1">{applicant.nama}</p>

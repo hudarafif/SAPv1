@@ -34,7 +34,7 @@ export default function NotificationPanel({ isOpen, onClose }: NotificationPanel
   };
 
   return (
-    <div className="fixed inset-y-0 right-0 w-80 glass-premium border-l border-zinc-200 dark:border-zinc-800 shadow-2xl z-50 flex flex-col transition-all duration-300 animate-slide-in">
+    <div className="fixed inset-y-0 right-0 w-full sm:w-80 max-w-xs glass-premium border-l border-zinc-200 dark:border-zinc-800 shadow-2xl z-50 flex flex-col transition-all duration-300 animate-slide-in">
       {/* Header */}
       <div className="p-4 border-b border-zinc-200/50 dark:border-zinc-800/50 flex items-center justify-between">
         <div className="flex items-center gap-2">

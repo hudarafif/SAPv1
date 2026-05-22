@@ -335,10 +335,10 @@ function DetailPegawaiModal({ onClose, pegawai, isLoading }: ModalProps) {
         ) : (
           <>
             {/* Tabs */}
-            <div className="px-6 bg-zinc-50/50 dark:bg-zinc-950/40 border-b border-zinc-200/50 dark:border-zinc-800/50 flex gap-2">
+            <div className="px-6 bg-zinc-50/50 dark:bg-zinc-950/40 border-b border-zinc-200/50 dark:border-zinc-800/50 flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-thin">
               <button
                 onClick={() => setActiveTab('profile')}
-                className={`py-3 px-3 text-xs font-semibold tracking-wider uppercase border-b-2 flex items-center gap-1.5 cursor-pointer transition-all ${
+                className={`py-3 px-3 text-xs font-semibold tracking-wider uppercase border-b-2 flex items-center gap-1.5 shrink-0 cursor-pointer transition-all ${
                   activeTab === 'profile'
                     ? 'border-brand-500 text-brand-600 dark:text-brand-400'
                     : 'border-transparent text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300'
@@ -349,7 +349,7 @@ function DetailPegawaiModal({ onClose, pegawai, isLoading }: ModalProps) {
               </button>
               <button
                 onClick={() => setActiveTab('history')}
-                className={`py-3 px-3 text-xs font-semibold tracking-wider uppercase border-b-2 flex items-center gap-1.5 cursor-pointer transition-all ${
+                className={`py-3 px-3 text-xs font-semibold tracking-wider uppercase border-b-2 flex items-center gap-1.5 shrink-0 cursor-pointer transition-all ${
                   activeTab === 'history'
                     ? 'border-brand-500 text-brand-600 dark:text-brand-400'
                     : 'border-transparent text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300'
@@ -360,7 +360,7 @@ function DetailPegawaiModal({ onClose, pegawai, isLoading }: ModalProps) {
               </button>
               <button
                 onClick={() => setActiveTab('kpi')}
-                className={`py-3 px-3 text-xs font-semibold tracking-wider uppercase border-b-2 flex items-center gap-1.5 cursor-pointer transition-all ${
+                className={`py-3 px-3 text-xs font-semibold tracking-wider uppercase border-b-2 flex items-center gap-1.5 shrink-0 cursor-pointer transition-all ${
                   activeTab === 'kpi'
                     ? 'border-brand-500 text-brand-600 dark:text-brand-400'
                     : 'border-transparent text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300'
@@ -377,7 +377,7 @@ function DetailPegawaiModal({ onClose, pegawai, isLoading }: ModalProps) {
               {activeTab === 'profile' && (
                 <div className="space-y-6">
                   {/* General Info */}
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <span className="text-[10px] uppercase font-bold text-zinc-400 dark:text-zinc-500 tracking-wider">Email</span>
                       <p className="text-xs font-medium text-zinc-700 dark:text-zinc-300 flex items-center gap-1.5 mt-1">
@@ -418,7 +418,7 @@ function DetailPegawaiModal({ onClose, pegawai, isLoading }: ModalProps) {
                       <ShieldCheck className="w-4 h-4" />
                       Registrasi Jaminan Sosial (BPJS)
                     </h4>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <span className="text-[9px] uppercase font-bold text-zinc-400 dark:text-zinc-500">BPJS Kesehatan</span>
                         <p className="text-xs font-mono text-zinc-700 dark:text-zinc-300 mt-1">
@@ -500,7 +500,7 @@ function DetailPegawaiModal({ onClose, pegawai, isLoading }: ModalProps) {
                     {!pegawai.kpi || pegawai.kpi.length === 0 ? (
                       <p className="text-xs text-zinc-500 dark:text-zinc-400">Tidak ada riwayat KPI.</p>
                     ) : (
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {pegawai.kpi.map((k) => (
                           <div 
                             key={k.id} 
